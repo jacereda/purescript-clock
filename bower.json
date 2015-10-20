@@ -9,5 +9,8 @@
     "node_modules",
     "bower_components",
     "output"
-  ]
+  ],
+  "devDependencies": {
+    "purescript-console": "~0.1.1"
+  }
 }

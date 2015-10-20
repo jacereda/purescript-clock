@@ -1,17 +1,14 @@
-module Clock where
+module System.Clock where
 
 import Control.Monad.Eff
+import Prelude
 
-foreign import data Clock :: !
+foreign import data CLOCK :: !
 
-newtype Stamp = Stamp Number
-type Nanoseconds = Number
+newtype Stamp = Stamp Int
+type Nanoseconds = Int
 
-foreign import now
-"""
-var now = typeof(performance) == 'undefined' && require('performance-now')
-  || function() { return performance.now(); }
-""" :: forall e. Eff (clock :: Clock|e) Stamp
+foreign import now :: forall e. Eff (clock :: CLOCK|e) Stamp
 
 interval :: Stamp -> Stamp -> Nanoseconds
-interval (Stamp a) (Stamp b) = 0 .|. ((b - a) * 1000000 + 0.5)
+interval (Stamp a) (Stamp b) = (b - a) * 1000000
