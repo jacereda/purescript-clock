@@ -1,6 +1,6 @@
 module System.Clock where
 
-import Control.Monad.Eff
+import Control.Monad.Eff (Eff)
 import Prelude
 
 foreign import data CLOCK :: !

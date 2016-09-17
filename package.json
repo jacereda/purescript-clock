@@ -1,6 +1,11 @@
 {
   "private": true,
   "dependencies": {
-      "performance-now": "*"
+      "performance-now": "*",
+      "purescript-eff": "~1.0.0"
+  },
+  "devDependencies": {
+    "purescript-console": "~1.0.0",
+    "purescript-math": "~2.0.0"
   }
 }
