@@ -1,5 +1,6 @@
 {
   "name": "purescript-clock",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/jacereda/purescript-clock.git"
