@@ -1,14 +1,16 @@
 module System.Clock where
 
-import Control.Monad.Eff (Eff)
 import Prelude
 
-foreign import data CLOCK :: !
+import Data.UInt (UInt, round)
+import Control.Monad.Eff (kind Effect, Eff)
 
-newtype Stamp = Stamp Int
-type Nanoseconds = Int
+foreign import data CLOCK :: Effect
+
+newtype Stamp = Stamp Number
+type Nanoseconds = UInt
 
 foreign import now :: forall e. Eff (clock :: CLOCK|e) Stamp
 
 interval :: Stamp -> Stamp -> Nanoseconds
-interval (Stamp a) (Stamp b) = (b - a) * 1000000
+interval (Stamp a) (Stamp b) = round (b - a)
