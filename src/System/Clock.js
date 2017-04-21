@@ -3,7 +3,7 @@
 // module System.Clock
 var p = typeof window != 'undefined' && window.performance || {}
 var pr = typeof global != 'undefined' && global.process || {}
-exports.now = p.now && function() { return p.now() * 1e6; }
+exports.nanoseconds = p.now && function() { return p.now() * 1e6; }
     || p.mozNow && function() { return p.mozNow() * 1e6; }
     || p.msNow && function() { return p.msNow() * 1e6; }
     || p.oNow && function() { return p.oNow() * 1e6; }
