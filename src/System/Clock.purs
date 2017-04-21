@@ -1,7 +1,6 @@
 module System.Clock where
 
 import Prelude
-
 import Control.Monad.Eff (kind Effect, Eff)
 
 foreign import data CLOCK :: Effect
